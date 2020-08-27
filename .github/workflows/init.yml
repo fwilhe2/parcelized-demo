@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: |
+        cd library
+        ./gradlew buil
+        cd ..
+        sudo npm install -g parcel-bundler
+        npm install
+        parcel build index.html
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: .
