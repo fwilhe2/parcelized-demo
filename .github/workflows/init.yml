@@ -12,7 +12,7 @@ jobs:
         cd library
         ./gradlew buil
         cd ..
-        npm install -g typescript
-        npm install -g ts-node
+        sudo npm install -g typescript
+        sudo npm install -g ts-node
         npm install
         ts-node index.ts
