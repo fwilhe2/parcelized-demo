@@ -13,3 +13,4 @@ jobs:
         ./gradlew buil
         cd ..
         npm install
+        node index.js
