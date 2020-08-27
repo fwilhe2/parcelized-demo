@@ -12,7 +12,6 @@ jobs:
         cd library
         ./gradlew buil
         cd ..
-        sudo npm install -g typescript
-        sudo npm install -g ts-node
+        sudo npm install -g parcel-bundler
         npm install
-        ts-node index.ts
+        parcel build index.html
